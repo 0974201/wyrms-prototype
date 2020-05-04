@@ -50,12 +50,12 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,sprites.dungeon.stairLarge,sprites.dungeon.stairNorth],
             TileScale.Sixteen
         ))
-let mySprite = sprites.create(sprites.duck.duck3, SpriteKind.Player)
-controller.moveSprite(mySprite)
-tiles.placeOnRandomTile(mySprite, sprites.dungeon.stairNorth)
-scene.cameraFollowSprite(mySprite)
+let playa = sprites.create(sprites.duck.duck3, SpriteKind.Player)
+controller.moveSprite(playa)
+tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
+scene.cameraFollowSprite(playa)
 info.setLife(3)
-let mySprite2 = sprites.create(img`
+let phood = sprites.create(img`
 . . . . . . . e c 7 . . . . . . 
 . . . . e e e c 7 7 e e . . . . 
 . . c e e e e c 7 e 2 2 e e . . 
