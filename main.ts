@@ -24,35 +24,33 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     phood.destroy()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
-    game.over(true)
-    effects.confetti.endScreenEffect()
+    game.over(true, effects.confetti)
 })
 info.onLifeZero(function () {
-    game.over(false)
-    effects.hearts.endScreenEffect()
+    game.over(false, effects.hearts)
 })
 let phood: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
-            hex`1000100002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001`,
+            hex`10001000010a0a0a0a0a0a0a0a0a0a0a0a0a0a0e050303030303030303030303030303060405050505050505050505050505050704050505050505050505050505050507040505050505050505050505050505070405050505050505050505050505050704050505050505050505050505050507040505050505050505050505050505070405050505050505050505050505050704050505050505050505050505050507040505050505050805080808080808080405050505050508050505050505050704050505050505080808080808080907040505050505050505050505050509070405050505050505050505050505090704050505050505050505050505050902`,
             img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . . 
+2 . . . . . . . . . . . . . . . 
+2 . . . . . . . . . . . . . 2 . 
+2 . . . . . . . . . . . . . 2 . 
+2 . . . . . . . . . . . . . 2 . 
+2 . . . . . . . . . . . . . 2 . 
 `,
-            [myTiles.tile0,sprites.dungeon.stairLarge,sprites.dungeon.stairNorth],
+            [myTiles.tile0,sprites.dungeon.stairLarge,sprites.dungeon.stairNorth,sprites.builtin.forestTiles6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles10,sprites.builtin.forestTiles7,sprites.builtin.forestTiles11,sprites.builtin.forestTiles8,sprites.builtin.forestTiles12,sprites.builtin.forestTiles1,sprites.builtin.forestTiles29,sprites.builtin.forestTiles27,sprites.builtin.forestTiles24,sprites.builtin.forestTiles20,sprites.builtin.forestTiles18,sprites.builtin.forestTiles19,sprites.builtin.forestTiles17],
             TileScale.Sixteen
         ))
 let playa = sprites.create(sprites.duck.duck3, SpriteKind.Player)
