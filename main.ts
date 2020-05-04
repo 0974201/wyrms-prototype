@@ -19,6 +19,10 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeLifeBy(1)
+    phood.destroy()
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     game.over(true)
     effects.confetti.endScreenEffect()
@@ -27,6 +31,7 @@ info.onLifeZero(function () {
     game.over(false)
     effects.hearts.endScreenEffect()
 })
+let phood: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
             hex`1000100002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001`,
             img`
@@ -55,7 +60,7 @@ controller.moveSprite(playa)
 tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
 scene.cameraFollowSprite(playa)
 info.setLife(3)
-let phood = sprites.create(img`
+phood = sprites.create(img`
 . . . . . . . e c 7 . . . . . . 
 . . . . e e e c 7 7 e e . . . . 
 . . c e e e e c 7 e 2 2 e e . . 
