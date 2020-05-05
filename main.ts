@@ -24,22 +24,22 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles14, function (
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. . . . . . 2 2 2 2 . . . . . . 
-. . . . 2 2 3 3 3 3 2 e . . . . 
-. . . 2 3 d 1 1 d d 3 2 e . . . 
-. . 2 3 1 d 3 3 3 d d 3 e . . . 
-. 2 3 1 3 3 3 3 3 d 1 3 b e . . 
-. 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
-2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
-2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
-2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
-2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
-e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
-e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
-e 3 d 3 3 1 d d 3 d 1 b b e e . 
-. e 3 1 1 d d 1 1 1 b b e e e . 
-. . e 3 3 3 3 3 3 b e e e e . . 
-. . . e e e e e e e e e e . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . c c . . . . . . 
+. . . . . c a a a a . . . . . . 
+. . . . . a a f f b a . . . . . 
+. . . . c a b f f c b . . . . . 
+. . . . c b b b a f c b . . . . 
+. . . . c b a c a b b b . . . . 
+. . . . . b b f f a a c . . . . 
+. . . . . . a a b b c . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, playa, -71, 50)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
@@ -169,26 +169,7 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 . . . 2 2 e e 4 4 4 2 e e . . . 
 . . . . . 2 2 e e e e . . . . . 
 `, SpriteKind.Food)
-let phood_1 = sprites.create(img`
-. . . . . . . e c 7 . . . . . . 
-. . . . e e e c 7 7 e e . . . . 
-. . c e e e e c 7 e 2 2 e e . . 
-. c e e e e e c 6 e e 2 2 2 e . 
-. c e e e 2 e c c 2 4 5 4 2 e . 
-c e e e 2 2 2 2 2 2 4 5 5 2 2 e 
-c e e 2 2 2 2 2 2 2 2 4 4 2 2 e 
-c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
-c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
-c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
-c e e 2 2 2 2 2 2 2 2 2 2 4 2 e 
-. e e e 2 2 2 2 2 2 2 2 2 4 e . 
-. 2 e e 2 2 2 2 2 2 2 2 4 2 e . 
-. . 2 e e 2 2 2 2 2 4 4 2 e . . 
-. . . 2 2 e e 4 4 4 2 e e . . . 
-. . . . . 2 2 e e e e . . . . . 
-`, SpriteKind.Food)
 tiles.placeOnTile(phood, tiles.getTileLocation(3, 17))
-tiles.placeOnTile(phood_1, tiles.getTileLocation(2, 14))
 let mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 let fghfgh = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 game.onUpdateInterval(500, function () {
