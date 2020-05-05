@@ -1,5 +1,6 @@
 # yeet ![Build status badge](https://github.com/cyborgrooster/yeet/workflows/MakeCode/badge.svg)
 
+https://makecode.com/_ARRakTCMgXrm
 
 
 ## Use this extension
