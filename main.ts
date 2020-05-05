@@ -74,7 +74,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, oth
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     info.changeLifeBy(info.life() - 1)
     playa.say(":D", 200)
-    phood.destroy()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
@@ -84,8 +83,8 @@ info.onLifeZero(function () {
     game.over(false, effects.hearts)
 })
 let projectile: Sprite = null
-let phood: Sprite = null
 let mySprite: Sprite = null
+let phood: Sprite = null
 let werty: Sprite = null
 let playa: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
@@ -114,10 +113,28 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,sprites.dungeon.stairLarge,sprites.dungeon.stairNorth,sprites.builtin.forestTiles6,sprites.builtin.forestTiles9,sprites.builtin.forestTiles10,sprites.builtin.forestTiles7,sprites.builtin.forestTiles11,sprites.builtin.forestTiles8,sprites.builtin.forestTiles12,sprites.builtin.forestTiles1,sprites.builtin.forestTiles29,sprites.builtin.forestTiles27,sprites.builtin.forestTiles24,sprites.builtin.forestTiles20,sprites.builtin.forestTiles18,sprites.builtin.forestTiles19,sprites.builtin.forestTiles17,sprites.builtin.forestTiles26,sprites.dungeon.hazardHole,sprites.builtin.oceanDepths9,sprites.builtin.oceanDepths10,sprites.builtin.forestTiles14,sprites.builtin.forestTiles2,sprites.builtin.forestTiles5,sprites.castle.tileDarkGrass3,sprites.dungeon.stairSouth,sprites.builtin.forestTiles15,sprites.builtin.forestTiles13],
             TileScale.Sixteen
         ))
-playa = sprites.create(sprites.duck.duck3, SpriteKind.Player)
-werty = sprites.create(sprites.builtin.clownFish1, SpriteKind.Enemy)
+playa = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . 3 3 3 3 . . . 
+. . . . . . . . 3 3 3 3 3 3 . . 
+. . . . . . . 3 3 . . . 3 3 3 . 
+. . . . . . 3 3 . . . . . . . . 
+. . . . . . 3 3 . . . . . . . . 
+. . . . . . 3 3 . . . . . . . . 
+. . . . . . . c c c c . . . . . 
+. . . . . . . . b 2 b b . . . . 
+. . . . . . . . . . . b b . . . 
+. . . . . . . . . . . c c . . . 
+. 3 . . . . . . . . . 3 3 . . . 
+. 3 3 . . . . . . . . 3 3 . . . 
+. . 3 3 3 3 3 3 3 3 3 3 . . . . 
+. . . 3 3 3 3 3 3 3 . . . . . . 
+`, SpriteKind.Player)
+werty = sprites.create(sprites.duck.duck3, SpriteKind.Enemy)
 tiles.placeOnTile(werty, tiles.getTileLocation(5, 8))
-mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
+let thfhtfh = sprites.create(sprites.duck.duck3, SpriteKind.Enemy)
+tiles.placeOnTile(thfhtfh, tiles.getTileLocation(4, 14))
 controller.moveSprite(playa)
 tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
 scene.cameraFollowSprite(playa)
@@ -141,7 +158,11 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 . . . . . 2 2 e e e e . . . . . 
 `, SpriteKind.Food)
 tiles.placeOnTile(phood, tiles.getTileLocation(3, 17))
+mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
+let fghfgh = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 game.onUpdateInterval(500, function () {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 8))
     mySprite.setVelocity(180, 50)
+    tiles.placeOnTile(fghfgh, tiles.getTileLocation(4, 14))
+    fghfgh.setVelocity(200, 50)
 })
