@@ -45,7 +45,7 @@ e 3 d 3 3 1 d d 3 d 1 b b e e .
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeLifeBy(1)
     playa.say(":D", 200)
-    phood.destroy()
+    otherSprite.destroy()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     game.over(true, effects.confetti)
@@ -64,7 +64,6 @@ info.onLifeZero(function () {
     game.over(false, effects.hearts)
 })
 let projectile: Sprite = null
-let phood: Sprite = null
 let playa: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
             hex`13001300010a171717171717171717171717171717170e04030303030316030303030303030303030306040505050505160505050505050505050505070405050909090909090909090909090905050704050509050505050505050505050505050507040505090505050505050505050505050505070405050909090505090909090909090905050704050509050505050505050505050509050507040505090505050505050505050505090505070405050909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505070405050909090909090905050905050905050704050509050505050505050505050509050507040505090505050505050505050505090505070409090909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505071c03030303030303030303030303030905021b`,
@@ -152,7 +151,25 @@ controller.moveSprite(playa)
 tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
 scene.cameraFollowSprite(playa)
 info.setLife(3)
-phood = sprites.create(img`
+let phood = sprites.create(img`
+. . . . . . . e c 7 . . . . . . 
+. . . . e e e c 7 7 e e . . . . 
+. . c e e e e c 7 e 2 2 e e . . 
+. c e e e e e c 6 e e 2 2 2 e . 
+. c e e e 2 e c c 2 4 5 4 2 e . 
+c e e e 2 2 2 2 2 2 4 5 5 2 2 e 
+c e e 2 2 2 2 2 2 2 2 4 4 2 2 e 
+c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+c e e 2 2 2 2 2 2 2 2 2 2 2 2 e 
+c e e 2 2 2 2 2 2 2 2 2 2 4 2 e 
+. e e e 2 2 2 2 2 2 2 2 2 4 e . 
+. 2 e e 2 2 2 2 2 2 2 2 4 2 e . 
+. . 2 e e 2 2 2 2 2 4 4 2 e . . 
+. . . 2 2 e e 4 4 4 2 e e . . . 
+. . . . . 2 2 e e e e . . . . . 
+`, SpriteKind.Food)
+let phood_1 = sprites.create(img`
 . . . . . . . e c 7 . . . . . . 
 . . . . e e e c 7 7 e e . . . . 
 . . c e e e e c 7 e 2 2 e e . . 
@@ -171,6 +188,7 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 . . . . . 2 2 e e e e . . . . . 
 `, SpriteKind.Food)
 tiles.placeOnTile(phood, tiles.getTileLocation(3, 17))
+tiles.placeOnTile(phood_1, tiles.getTileLocation(2, 14))
 let mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 let fghfgh = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 game.onUpdateInterval(500, function () {
