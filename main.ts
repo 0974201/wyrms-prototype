@@ -131,9 +131,43 @@ playa = sprites.create(img`
 . . 3 3 3 3 3 3 3 3 3 3 . . . . 
 . . . 3 3 3 3 3 3 3 . . . . . . 
 `, SpriteKind.Player)
-werty = sprites.create(sprites.duck.duck3, SpriteKind.Enemy)
+werty = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . e e e e e e . . . . . . 
+. . . e e e e e e e e . . . . . 
+. . e c e e e e e e e e . . . . 
+. e c e e e e e d e e e . . . . 
+. e c e e e e e f e e e 3 3 . . 
+. e c e e e e e e e e e e c . . 
+e c e e e e e e e e e e e e . . 
+e c e e e e e e e e e e e . . . 
+e c e e e e e d 1 e e e . . . . 
+e c e e e e e e d 1 e e . . . . 
+e c e e e e e e e d e e . . . . 
+. e c e e e e e c e e e e . . . 
+. e c c e e e c e e e e e e e . 
+. . e c c c e e e e e e e e e . 
+`, SpriteKind.Enemy)
 tiles.placeOnTile(werty, tiles.getTileLocation(5, 8))
-let thfhtfh = sprites.create(sprites.duck.duck3, SpriteKind.Enemy)
+let thfhtfh = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . e e e e e e . . . . . . 
+. . . e e e e e e e e . . . . . 
+. . e c e e e e e e e e . . . . 
+. e c e e e e e d e e e . . . . 
+. e c e e e e e f e e e 3 3 . . 
+. e c e e e e e e e e e e c . . 
+e c e e e e e e e e e e e e . . 
+e c e e e e e e e e e e e . . . 
+e c e e e e e d 1 e e e . . . . 
+e c e e e e e e d 1 e e . . . . 
+e c e e e e e e e d e e . . . . 
+. e c e e e e e c e e e e . . . 
+. e c c e e e c e e e e e e e . 
+. . e c c c e e e e e e e e e . 
+`, SpriteKind.Enemy)
 tiles.placeOnTile(thfhtfh, tiles.getTileLocation(4, 14))
 controller.moveSprite(playa)
 tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
