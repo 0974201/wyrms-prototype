@@ -24,39 +24,23 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles14, function (
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . b b b b b b b . . . . . . . . . . . 
-. . . . . . . . . . . b b 6 6 6 6 3 3 3 3 b a a . . . . . . . . 
-. . . . . . . . . b b 3 3 6 7 7 7 6 3 3 3 6 6 3 a a . . . . . . 
-. . . . . . . . b 3 3 3 3 3 8 8 8 3 3 3 3 8 9 6 3 3 a a . . . . 
-. . . . . . . b 3 3 3 3 3 3 3 3 3 3 3 3 3 3 8 9 6 3 3 a a . . . 
-. . . . . . b 3 4 4 4 3 3 3 3 3 3 3 3 3 3 3 3 8 6 3 3 b a e . . 
-. . . . . b 3 4 5 5 4 3 3 3 3 3 3 3 3 3 3 4 4 4 3 3 3 3 a e . . 
-. . . . b 3 3 3 2 2 3 3 3 d d d d 3 3 3 3 4 5 5 2 3 3 d a e e . 
-. . . b 3 d 3 3 3 3 3 3 d d 3 b b b b 3 3 3 2 2 3 3 3 d a b e . 
-. . b 3 d 3 3 3 3 3 3 d 3 b b 3 3 b b 3 3 3 3 3 3 3 3 d a 4 e . 
-. . b d 3 3 3 3 3 3 3 3 b 3 3 a a b 3 3 3 3 3 3 3 2 2 3 a 4 e e 
-. b 3 d 3 6 6 3 3 3 3 b 3 3 a a b 3 3 3 6 6 3 3 2 4 4 2 b 4 e e 
-. b d 3 b 9 8 3 3 3 3 a 3 a a 3 3 3 3 3 8 7 6 3 3 e e 3 b 4 e e 
-. b d 6 9 8 3 3 3 3 b a a a 3 3 3 3 3 3 3 8 7 6 3 3 b b 4 b e e 
-b 3 d 6 8 3 3 3 3 3 b b a 3 3 3 3 3 3 3 3 3 8 6 3 b a 4 4 e b e 
-b d d 3 3 3 3 3 3 3 b b 3 3 3 3 3 3 3 3 3 3 3 3 3 a 4 4 b e b e 
-a d d 6 6 6 6 3 3 3 3 3 3 2 2 3 3 3 3 6 6 3 3 3 b a 4 4 b b b e 
-a d 6 7 7 7 6 3 3 3 3 3 2 4 4 2 3 3 6 9 8 3 d 3 a 4 4 4 b 4 e . 
-a d d 8 8 8 b 3 3 3 3 3 3 e e 3 3 6 9 8 3 3 d 3 a 4 4 b 4 4 e . 
-a d d 3 3 3 3 3 3 3 3 3 3 3 3 3 3 6 8 3 3 d 3 a 4 4 4 b 4 e . . 
-a 3 d d 3 3 3 3 3 4 4 4 3 3 3 3 3 d d d d 3 a 4 4 4 b 4 4 e . . 
-a b 3 3 d d d 3 2 5 5 4 3 3 3 3 d d 3 3 a a 4 4 4 b 4 4 e . . . 
-. e a b b 3 d d 3 2 2 3 3 3 3 3 b a a a 4 4 4 4 b 4 4 e . . . . 
-. e b a b b 3 d 3 3 3 d 3 3 b a a 4 4 4 4 4 3 b 4 4 e . . . . . 
-. . e b a a b 3 d d d 3 a a a 4 4 4 4 4 3 3 b 4 4 e . . . . . . 
-. . e e b b a a b 3 3 a 4 4 4 4 4 3 3 3 b 4 4 4 e . . . . . . . 
-. . . e e e b b a a b 4 4 4 b 3 3 3 b 4 4 4 4 e . . . . . . . . 
-. . . . e b e e e b b b b b b b b 4 4 4 4 e e . . . . . . . . . 
-. . . . . e e b b b b 4 4 4 4 4 4 4 4 e e . . . . . . . . . . . 
-. . . . . . . e e e b b b 4 4 4 e e e . . . . . . . . . . . . . 
-. . . . . . . . . . e e e e e e . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-`, playa, -100, 50)
+. . . . . . 2 2 2 2 . . . . . . 
+. . . . 2 2 3 3 3 3 2 e . . . . 
+. . . 2 3 d 1 1 d d 3 2 e . . . 
+. . 2 3 1 d 3 3 3 d d 3 e . . . 
+. 2 3 1 3 3 3 3 3 d 1 3 b e . . 
+. 2 1 d 3 3 3 3 d 3 3 1 3 b b . 
+2 3 1 d 3 3 1 1 3 3 3 1 3 4 b b 
+2 d 3 3 d 1 3 1 3 3 3 1 3 4 4 b 
+2 d 3 3 3 1 3 1 3 3 3 1 b 4 4 e 
+2 d 3 3 3 1 1 3 3 3 3 1 b 4 4 e 
+e d 3 3 3 3 d 3 3 3 d d b 4 4 e 
+e d d 3 3 3 d 3 3 3 1 3 b 4 b e 
+e 3 d 3 3 1 d d 3 d 1 b b e e . 
+. e 3 1 1 d d 1 1 1 b b e e e . 
+. . e 3 3 3 3 3 3 b e e e e . . 
+. . . e e e e e e e e e e . . . 
+`, playa, -71, 50)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeLifeBy(1)
@@ -67,12 +51,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
     game.over(true, effects.confetti)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
-    playa.say(":D", 200)
-    werty.destroy()
-    mySprite.destroy()
+    sprite.destroy()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    info.changeLifeBy(info.life() - 1)
     playa.say(":D", 200)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
@@ -83,9 +64,7 @@ info.onLifeZero(function () {
     game.over(false, effects.hearts)
 })
 let projectile: Sprite = null
-let mySprite: Sprite = null
 let phood: Sprite = null
-let werty: Sprite = null
 let playa: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
             hex`13001300010a171717171717171717171717171717170e04030303030316030303030303030303030306040505050505160505050505050505050505070405050909090909090909090909090905050704050509050505050505050505050505050507040505090505050505050505050505050505070405050909090505090909090909090905050704050509050505050505050505050509050507040505090505050505050505050505090505070405050909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505070405050909090909090905050905050905050704050509050505050505050505050509050507040505090505050505050505050505090505070409090909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505071c03030303030303030303030303030905021b`,
@@ -131,7 +110,7 @@ playa = sprites.create(img`
 . . 3 3 3 3 3 3 3 3 3 3 . . . . 
 . . . 3 3 3 3 3 3 3 . . . . . . 
 `, SpriteKind.Player)
-werty = sprites.create(img`
+let werty = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . e e e e e e . . . . . . 
@@ -192,7 +171,7 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 . . . . . 2 2 e e e e . . . . . 
 `, SpriteKind.Food)
 tiles.placeOnTile(phood, tiles.getTileLocation(3, 17))
-mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
+let mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 let fghfgh = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 game.onUpdateInterval(500, function () {
     tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 8))
