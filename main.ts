@@ -68,6 +68,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (spr
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Projectile, function (sprite, otherSprite) {
     playa.say(":D", 200)
+    werty.destroy()
     mySprite.destroy()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
@@ -75,12 +76,17 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
     playa.say(":D", 200)
     phood.destroy()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    playa.say(":(", 200)
+})
 info.onLifeZero(function () {
     game.over(false, effects.hearts)
 })
 let projectile: Sprite = null
 let phood: Sprite = null
 let mySprite: Sprite = null
+let werty: Sprite = null
 let playa: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
             hex`13001300010a171717171717171717171717171717170e04030303030316030303030303030303030306040505050505160505050505050505050505070405050909090909090909090909090905050704050509050505050505050505050505050507040505090505050505050505050505050505070405050909090505090909090909090905050704050509050505050505050505050509050507040505090505050505050505050505090505070405050909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505070405050909090909090905050905050905050704050509050505050505050505050509050507040505090505050505050505050505090505070409090909090909090909090905050905050704050505050505050505050509050509050507040505050505050505050505090505090505071c03030303030303030303030303030905021b`,
@@ -109,7 +115,9 @@ tiles.setTilemap(tiles.createTilemap(
             TileScale.Sixteen
         ))
 playa = sprites.create(sprites.duck.duck3, SpriteKind.Player)
-mySprite = sprites.create(sprites.builtin.clownFish1, SpriteKind.Enemy)
+werty = sprites.create(sprites.builtin.clownFish1, SpriteKind.Enemy)
+tiles.placeOnTile(werty, tiles.getTileLocation(5, 8))
+mySprite = sprites.create(sprites.builtin.coin0, SpriteKind.Enemy)
 controller.moveSprite(playa)
 tiles.placeOnRandomTile(playa, sprites.dungeon.stairNorth)
 scene.cameraFollowSprite(playa)
@@ -134,6 +142,6 @@ c e e 2 2 2 2 2 2 2 2 2 2 4 2 e
 `, SpriteKind.Food)
 tiles.placeOnTile(phood, tiles.getTileLocation(3, 17))
 game.onUpdateInterval(500, function () {
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 8))
-    mySprite.setVelocity(-100, 100)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 8))
+    mySprite.setVelocity(180, 50)
 })
